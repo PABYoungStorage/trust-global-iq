@@ -5,8 +5,8 @@ header {
   justify-content: space-around;
   align-items: center;
   padding: 10px 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  color: #3b3663;
+  box-shadow: 0 0 10px var(--border-light);
+  color: var(--font-color);
   transform: translate(0, -10px);
   opacity: 0;
   animation: header 0.7s ease-in-out forwards;
@@ -58,7 +58,7 @@ header {
       width: 20px;
       height: 3px;
       display: block;
-      background-color: #3b3663;
+      background-color: var(--font-color);
       &:nth-child(2) {
         width: 16px;
       }
