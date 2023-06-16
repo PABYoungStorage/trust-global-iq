@@ -16,15 +16,10 @@ const Header = () => {
       res[2].style.animation = "resclose3 0.5s ease-in-out forwards";
     } else {
       nav.style.height = "";
-      if (window.pageYOffset > 0) {
-        res[0].style.animation = "rescloseh 0.5s ease-in-out forwards";
-        res[1].style.animation = "resclose2h 0.2s ease-in-out forwards";
-        res[2].style.animation = "resclose3h 0.5s ease-in-out forwards";
-      } else {
-        res[0].style.animation = "resclosen 0.5s ease-in-out forwards";
-        res[1].style.animation = "resclose2n 0.2s ease-in-out forwards";
-        res[2].style.animation = "resclose3n 0.5s ease-in-out forwards";
-      }
+      res[0].style.animation = "resclosen 0.5s ease-in-out forwards";
+      res[1].style.animation = "resclose2n 0.2s ease-in-out forwards";
+      res[2].style.animation = "resclose3n 0.5s ease-in-out forwards";
+      
     }
   };
   useEffect(() => {

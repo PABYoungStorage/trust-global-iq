@@ -99,7 +99,7 @@ const HomeSecction2 = () => {
         <span>Under 7% for admin, fundraising, and salaries.</span>
         <b>Thank you for your continued Support</b>
         <button className="btn">
-          <i class="bi bi-emoji-heart-eyes-fill"></i>donate now
+          <i className="bi bi-emoji-heart-eyes-fill"></i>donate now
         </button>
       </div>
       <div className="we-provide">
@@ -116,6 +116,15 @@ const HomeSecction2 = () => {
           ))}
         </div>
       </div>
+      {/* <div className="mission">
+        <h1>
+          Our mission is to help people by distributing Money and Service
+          globally.
+        </h1>
+        <div className="mission-box">
+
+        </div>
+      </div> */}
     </div>
   );
 };

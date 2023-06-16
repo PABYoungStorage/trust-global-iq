@@ -48,7 +48,7 @@ header {
   .nav {
     display: flex;
     gap: 20px;
-    transition: 0.1s ease-in-out;
+    transition: 0.3s ease-in-out;
     .link {
       text-transform: capitalize;
       font-size: 19px;
@@ -76,13 +76,17 @@ header {
     justify-content: center;
     align-items: flex-end;
     z-index: 1000;
+    background-color: #f1f1f1;
+    padding:8px;
+    border-radius: 6px;
     cursor: pointer;
     span {
       transition: 0.1s;
       width: 20px;
       height: 3px;
       display: block;
-      background-color: var(--light);
+      background-color: var(--font-color);
+      box-shadow: 0 0 10px var(--border-light);
       &:nth-child(2) {
         width: 16px;
       }
@@ -138,69 +142,31 @@ header {
   //   on close animation
   @keyframes resclosen {
     0% {
-      background-color: var(--font-color);
       transform: rotate(-59deg) translate(-5px, 5px);
     }
     100% {
-      background-color: var(--light);
       transform: rotate(0) translate(0);
     }
   }
   @keyframes resclose2n {
     0% {
-      background-color: var(--font-color);
       width: 0;
     }
     100% {
-      background-color: var(--light);
       width: 16px;
     }
   }
   @keyframes resclose3n {
     0% {
-      background-color: var(--font-color);
       width: 20px;
       transform: rotate(59deg) translate(-3px, -4px);
     }
     100% {
-      background-color: var(--light);
       width: 12px;
       transform: rotate(0) translate(0);
     }
   }
-  //   on close animation not for home
-  @keyframes rescloseh {
-    0% {
-      background-color: var(--light);
-      transform: rotate(-59deg) translate(-5px, 5px);
-    }
-    100% {
-      background-color: var(--font-color);
-      transform: rotate(0) translate(0);
-    }
-  }
-  @keyframes resclose2h {
-    0% {
-      background-color: var(--light);
-      width: 0;
-    }
-    100% {
-      background-color: var(--font-color);
-      width: 16px;
-    }
-  }
-  @keyframes resclose3h {
-    0% {
-      width: 20px;
-      transform: rotate(59deg) translate(-3px, -4px);
-      background-color: var(--light);
-    }
-    100% {
-      background-color: var(--font-color);
-      width: 12px;
-      transform: rotate(0) translate(0);
-    }
-  }
+  
   //   responsive design
   @media screen and (max-width: 820px) {
     .logoContainer {
