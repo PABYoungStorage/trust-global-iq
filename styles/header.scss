@@ -12,6 +12,11 @@
   transition: 0.1s linear;
   padding: 5px 20px;
   z-index: 1000;
+  .res-menu {
+    span {
+      background-color: var(--font-color);
+    }
+  }
 }
 header {
   position: fixed;
@@ -159,6 +164,39 @@ header {
     }
     100% {
       background-color: var(--light);
+      width: 12px;
+      transform: rotate(0) translate(0);
+    }
+  }
+  //   on close animation not for home
+  @keyframes rescloseh {
+    0% {
+      background-color: var(--light);
+      transform: rotate(-59deg) translate(-5px, 5px);
+    }
+    100% {
+      background-color: var(--font-color);
+      transform: rotate(0) translate(0);
+    }
+  }
+  @keyframes resclose2h {
+    0% {
+      background-color: var(--light);
+      width: 0;
+    }
+    100% {
+      background-color: var(--font-color);
+      width: 16px;
+    }
+  }
+  @keyframes resclose3h {
+    0% {
+      width: 20px;
+      transform: rotate(59deg) translate(-3px, -4px);
+      background-color: var(--light);
+    }
+    100% {
+      background-color: var(--font-color);
       width: 12px;
       transform: rotate(0) translate(0);
     }

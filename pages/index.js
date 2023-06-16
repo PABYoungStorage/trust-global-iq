@@ -52,6 +52,7 @@ export default function Home() {
       imagelis[current].childNodes[3].style.animation =
         "homeh6 1s 2.5s ease-in-out forwards";
     }, 5000);
+
     return () => {
       clearInterval(images);
     };
@@ -63,7 +64,7 @@ export default function Home() {
       </Head>
       <div className="trust-home">
         <HomeImageGallery imageList={imageList} />
-        <div className="trust-home2 section"></div>
+        <HomeSecction2 />
       </div>
     </>
   );
@@ -84,3 +85,60 @@ const HomeImageGallery = (props) => {
     </>
   );
 };
+
+const HomeSecction2 = () => {
+  return (
+    <div className="trust-home2 section">
+      <div className="be-box">
+        <div className="box-b">be the best</div>
+        <div className="box-b">be safe</div>
+        <div className="box-b">be open & honest</div>
+      </div>
+      <div className="sec-1">
+        <h1>Over 93% of all Donations go directly to Projects.</h1>
+        <span>Under 7% for admin, fundraising, and salaries.</span>
+        <b>Thank you for your continued Support</b>
+        <button className="btn">
+          <i class="bi bi-emoji-heart-eyes-fill"></i>donate now
+        </button>
+      </div>
+      <div className="we-provide">
+        <h1>We Provide</h1>
+        <div className="provide-box">
+          {weProvide.map((a) => (
+            <div className="pro-sub-box" key={a.name}>
+              <img src={a.src} alt={a.name} />
+              <main>
+                <b>{a.name}</b>
+                <span>{a.dis}</span>
+              </main>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const weProvide = [
+  {
+    name: "High Quality Education",
+    dis: "To provide Education to all sections of society from children to youth.",
+    src: "/provide/edu.png",
+  },
+  {
+    name: "Supports for elderly",
+    dis: "High quality,person centred supports for people with a disability and the elderly",
+    src: "/provide/i2.png",
+  },
+  {
+    name: "Skill Developments",
+    dis: "To Conduct Skill Development courses among Students & Youth.",
+    src: "/provide/skill.png",
+  },
+  {
+    name: "Assistance with Community and Civic Participation.",
+    dis: "We are here to help you to engage with community and to enjoy your hobbies",
+    src: "/provide/i4.png",
+  },
+];
