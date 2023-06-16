@@ -1,15 +1,30 @@
-header {
-  position: sticky;
+.sticky {
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 10px var(--border-light);
+  transition: 0.1s linear;
+  padding: 5px 20px;
+  z-index: 1000;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 10px 20px;
-  box-shadow: 0 0 10px var(--border-light);
-  color: var(--font-color);
+  color: var(--light);
   transform: translate(0, -10px);
   opacity: 0;
   animation: header 0.7s ease-in-out forwards;
+  transition: 0.4s ease-in-out;
+  background-color: transparent;
+  z-index: 1000;
   .logoContainer {
     display: flex;
     justify-content: center;
@@ -58,7 +73,7 @@ header {
       width: 20px;
       height: 3px;
       display: block;
-      background-color: var(--font-color);
+      background-color: var(--light);
       &:nth-child(2) {
         width: 16px;
       }
@@ -78,11 +93,14 @@ header {
   @keyframes resclose {
     40% {
       transform: rotate(-62deg) translate(-5px, 5px);
+      background-color: var(--font-color);
     }
     70% {
+      background-color: var(--font-color);
       transform: rotate(-52deg) translate(-5px, 5px);
     }
     100% {
+      background-color: var(--font-color);
       transform: rotate(-59deg) translate(-5px, 5px);
     }
   }
@@ -95,12 +113,15 @@ header {
 
   @keyframes resclose3 {
     40% {
+      background-color: var(--font-color);
       transform: rotate(62deg) translate(-3px, -4px);
     }
     70% {
+      background-color: var(--font-color);
       transform: rotate(56deg) translate(-3px, -4px);
     }
     100% {
+      background-color: var(--font-color);
       width: 20px;
       transform: rotate(59deg) translate(-3px, -4px);
     }
@@ -108,26 +129,32 @@ header {
   //   on close animation
   @keyframes resclosen {
     0% {
+      background-color: var(--font-color);
       transform: rotate(-59deg) translate(-5px, 5px);
     }
     100% {
+      background-color: var(--light);
       transform: rotate(0) translate(0);
     }
   }
   @keyframes resclose2n {
     0% {
+      background-color: var(--font-color);
       width: 0;
     }
     100% {
+      background-color: var(--light);
       width: 16px;
     }
   }
   @keyframes resclose3n {
     0% {
+      background-color: var(--font-color);
       width: 20px;
       transform: rotate(59deg) translate(-3px, -4px);
     }
     100% {
+      background-color: var(--light);
       width: 12px;
       transform: rotate(0) translate(0);
     }
@@ -164,12 +191,14 @@ header {
       flex-direction: column;
       top: 0;
       left: 0;
-      background-color: #ffffff;
+      background-color: rgb(255, 255, 255);
       justify-content: center;
       align-items: center;
       width: 100%;
+      color: var(--font-color);
     }
     .res-menu {
+      color: var(--light);
       display: flex;
     }
   }

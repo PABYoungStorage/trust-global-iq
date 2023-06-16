@@ -35,10 +35,20 @@ const Header = () => {
         link[i].className = "link";
       }
     }
+    window.onscroll = function () {
+      var header = document.getElementById("header");
+      var sticky = header.offsetTop;
+
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    };
   }, [ChangeMenu]);
 
   return (
-    <header>
+    <header id="header">
       <div className="logoContainer">
         <img src="/logo.png" alt="Logo" className="logo" />
         <h3>IQ Global Trust</h3>
