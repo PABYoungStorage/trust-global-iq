@@ -40,7 +40,7 @@ const Header = () => {
   return (
     <header>
       <div className="logoContainer">
-        <img src="/logo.png" alt="Logo" className="logo" />
+        <img src="/Logos/logo.png" alt="Logo" className="logo" />
         <h3>IQ Global Trust</h3>
       </div>
       <nav className="nav" id="nav">

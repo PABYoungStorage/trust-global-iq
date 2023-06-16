@@ -1,6 +1,11 @@
 @charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 @import "header.scss";
+@import "footer.scss";
+@import "scrolltop.scss";
+@import "contact.scss";
+
+
 
 :root {
   --blue: #007bff;
@@ -53,4 +58,8 @@
   font-size: 19px;
   text-transform: capitalize;
   font-weight: 600;
+}
+
+body {
+  height: 200vh;
 }
