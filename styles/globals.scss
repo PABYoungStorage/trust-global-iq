@@ -46,6 +46,9 @@
   box-sizing: border-box;
   font-family: "DM Sans", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 .btn {
   border: 0;
   outline: 0;

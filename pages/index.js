@@ -63,6 +63,9 @@ export default function Home() {
           <title>Home - IQ Global Trust</title>
         </Head>
         <HomeImageGallery imageList={imageList} />
+        <div className="trust-home2">
+
+        </div>
       </div>
     </>
   );
