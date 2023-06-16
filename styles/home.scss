@@ -209,133 +209,141 @@
     width: 100%;
     background-color: aliceblue;
     padding: 20px;
-    .be-box {
-      width: 100%;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      .box-b {
-        padding: 25px 40px;
-        background-color: var(--light);
-        border-radius: 8px;
-        font-size: 25px;
-        text-transform: capitalize;
-        transition: 0.3s ease-in-out;
-        font-weight: 600;
-        color: var(--font-color);
-        &:hover {
-          transform: scale(1.05);
-          color: var(--primary);
-          cursor: pointer;
-          box-shadow: 0 5px 10px var(--shadow);
-          transform: translate(0, -5px);
-        }
-      }
-    }
-    .sec-1 {
-      color: var(--font-color);
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      h1 {
-        text-align: center;
-      }
-      span {
-        font-size: 16px;
-        text-align: center;
-      }
-      b {
-        text-align: center;
-        font-size: 22px;
-      }
-      button {
-        color: var(--light);
-        background-color: var(--primary);
-        margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    section {
+      max-width: 1400px;
+      .be-box {
+        width: 100%;
+        padding: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
-        i {
-          margin-right: 6px;
+        flex-wrap: wrap;
+        gap: 40px;
+        .box-b {
+          padding: 25px 40px;
+          background-color: var(--light);
+          border-radius: 8px;
+          font-size: 25px;
+          text-transform: capitalize;
+          transition: 0.3s ease-in-out;
+          font-weight: 600;
+          color: var(--font-color);
+          &:hover {
+            transform: scale(1.05);
+            color: var(--primary);
+            cursor: pointer;
+            box-shadow: 0 5px 10px var(--shadow);
+            transform: translate(0, -5px);
+          }
         }
       }
-    }
 
-    // we-provide
-    .we-provide {
-      padding: 10px;
-      color: var(--font-color);
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      h1 {
-        padding: 40px;
-        text-align: center;
-      }
-      .provide-box {
-        width: 100%;
+      .sec-1 {
+        color: var(--font-color);
+        padding: 50px 10px 10px 10px;
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 50px;
-        .pro-sub-box {
+        gap: 20px;
+        h1 {
+          font-size: 40px;
+          text-align: center;
+        }
+        span {
+          font-size: 16px;
+          text-align: center;
+        }
+        b {
+          text-align: center;
+          font-size: 22px;
+        }
+        button {
+          color: var(--light);
+          background-color: var(--primary);
+          margin-top: 30px;
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 500px;
-          padding: 20px;
-          border-radius: 8px;
-          background-color: var(--light);
-          gap: 40px;
-          transition: 0.3s ease-in-out;
-          img {
-            transition: 0.3s ease-in-out;
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-          }
-          main {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            b {
-              transition: 0.3s ease-in-out;
-              font-size: 22px;
-            }
-            span {
-              text-align: left;
-              word-spacing: 4px;
-              color: var(--secondary);
-              font-size: 18px;
-              line-height: 25px;
-            }
-          }
-          &:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 10px var(--shadow);
-          }
-          &:hover b {
-            letter-spacing: 1px;
-          }
-          &:hover img {
-            transform: translate(0, -20px);
+          i {
+            margin-right: 6px;
           }
         }
       }
-      @media screen and (max-width: 580px) {
+      // we-provide
+      .we-provide {
+        padding: 70px 10px 10px 10px;
+        color: var(--font-color);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        h1 {
+          padding: 40px;
+          font-size: 40px;
+          text-align: center;
+        }
         .provide-box {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 50px;
           .pro-sub-box {
-            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--light);
+            gap: 40px;
+            transition: 0.3s ease-in-out;
+            img {
+              transition: 0.3s ease-in-out;
+              width: 100px;
+              height: 100px;
+              object-fit: contain;
+            }
+            main {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              b {
+                transition: 0.3s ease-in-out;
+                font-size: 22px;
+              }
+              span {
+                text-align: left;
+                word-spacing: 4px;
+                color: var(--secondary);
+                font-size: 18px;
+                line-height: 25px;
+              }
+            }
+            &:hover {
+              transform: scale(1.05);
+              box-shadow: 0 0 10px var(--shadow);
+            }
+            &:hover b {
+              letter-spacing: 1px;
+            }
+            &:hover img {
+              transform: translate(0, -20px);
+            }
+          }
+        }
+        @media screen and (max-width: 580px) {
+          .provide-box {
+            .pro-sub-box {
+              width: 100%;
+            }
           }
         }
       }

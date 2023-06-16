@@ -89,34 +89,35 @@ const HomeImageGallery = (props) => {
 const HomeSecction2 = () => {
   return (
     <div className="trust-home2 section">
-      <div className="be-box">
-        <div className="box-b">be the best</div>
-        <div className="box-b">be safe</div>
-        <div className="box-b">be open & honest</div>
-      </div>
-      <div className="sec-1">
-        <h1>Over 93% of all Donations go directly to Projects.</h1>
-        <span>Under 7% for admin, fundraising, and salaries.</span>
-        <b>Thank you for your continued Support</b>
-        <button className="btn">
-          <i className="bi bi-emoji-heart-eyes-fill"></i>donate now
-        </button>
-      </div>
-      <div className="we-provide">
-        <h1>We Provide</h1>
-        <div className="provide-box">
-          {weProvide.map((a) => (
-            <div className="pro-sub-box" key={a.name}>
-              <img src={a.src} alt={a.name} />
-              <main>
-                <b>{a.name}</b>
-                <span>{a.dis}</span>
-              </main>
-            </div>
-          ))}
+      <section>
+        <div className="be-box">
+          <div className="box-b">be the best</div>
+          <div className="box-b">be safe</div>
+          <div className="box-b">be open & honest</div>
         </div>
-      </div>
-      {/* <div className="mission">
+        <div className="sec-1">
+          <h1>Over 93% of all Donations go directly to Projects.</h1>
+          <span>Under 7% for admin, fundraising, and salaries.</span>
+          <b>Thank you for your continued Support</b>
+          <button className="btn">
+            <i className="bi bi-emoji-heart-eyes-fill"></i>donate now
+          </button>
+        </div>
+        <div className="we-provide">
+          <h1>We Provide</h1>
+          <div className="provide-box">
+            {weProvide.map((a) => (
+              <div className="pro-sub-box" key={a.name}>
+                <img src={a.src} alt={a.name} />
+                <main>
+                  <b>{a.name}</b>
+                  <span>{a.dis}</span>
+                </main>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* <div className="mission">
         <h1>
           Our mission is to help people by distributing Money and Service
           globally.
@@ -125,6 +126,7 @@ const HomeSecction2 = () => {
 
         </div>
       </div> */}
+      </section>
     </div>
   );
 };
