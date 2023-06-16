@@ -23,16 +23,24 @@ const Header = () => {
   };
   useEffect(() => {
     const link = document.getElementsByClassName("link");
+    const navh3 = document.getElementById("navh3");
     let rpath = router.pathname.split("/");
     rpath.shift(0);
     for (let i = 0; i < link.length; i++) {
-      if (
-        link[i].getAttribute("name") == rpath[0] ||
-        (link[i].getAttribute("name") == "home" && rpath[0] == "")
-      ) {
-        link[i].className = "link active";
+      if (rpath[0] == "") {
+        navh3.className = "";
+        if (link[i].getAttribute("name") == "home") {
+          link[i].className = "link active";
+        } else {
+          link[i].className = "link";
+        }
       } else {
-        link[i].className = "link";
+        navh3.className = "nav-color";
+        if (link[i].getAttribute("name") == rpath[0]) {
+          link[i].className = "link active";
+        } else {
+          link[i].className = "link nav-color";
+        }
       }
     }
     window.onscroll = function () {
@@ -51,7 +59,7 @@ const Header = () => {
     <header id="header">
       <div className="logoContainer">
         <img src="/logo.png" alt="Logo" className="logo" />
-        <h3>IQ Global Trust</h3>
+        <h3 id="navh3">IQ Global Trust</h3>
       </div>
       <nav className="nav" id="nav">
         <span name="home" className="link" onClick={() => ChangeMenu("/")}>

@@ -58,14 +58,12 @@ export default function Home() {
   }, []);
   return (
     <>
+      <Head>
+        <title>Home - IQ Global Trust</title>
+      </Head>
       <div className="trust-home">
-        <Head>
-          <title>Home - IQ Global Trust</title>
-        </Head>
         <HomeImageGallery imageList={imageList} />
-        <div className="trust-home2">
-
-        </div>
+        <div className="trust-home2 section"></div>
       </div>
     </>
   );
@@ -73,7 +71,7 @@ export default function Home() {
 const HomeImageGallery = (props) => {
   return (
     <>
-      <div id="imageContainer">
+      <div id="imageContainer" className="section">
         {props.imageList.map((a) => (
           <div className="img-col" key={a.name}>
             <h6>{a.title}</h6>
