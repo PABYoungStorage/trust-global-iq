@@ -6,6 +6,11 @@
         align-items: center;
         justify-content: center;
         margin-top: 50px;
+
+        h1{
+            font-size: 36px;
+            color: var(--font-color);
+        }
     }
 
     .card {
@@ -36,8 +41,8 @@
             }
 
             img {
-                width: 100px;
-                height: 100px;
+                width: 80px;
+                height: 80px;
                 object-fit: contain;
 
             }
@@ -55,6 +60,25 @@
             h1 {
                 font-size: 36px;
                 color: var(--font-color);
+            }
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 20px;
+
+            img {
+                width: 200px;
+                height: 200px;
+                border-radius: 2px solid;
+                opacity: 0.5;
+
+                // &:hover {
+                //     color: red;
+                // }
             }
         }
 
