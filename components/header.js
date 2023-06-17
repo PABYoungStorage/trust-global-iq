@@ -19,7 +19,6 @@ const Header = () => {
       res[0].style.animation = "resclosen 0.5s ease-in-out forwards";
       res[1].style.animation = "resclose2n 0.2s ease-in-out forwards";
       res[2].style.animation = "resclose3n 0.5s ease-in-out forwards";
-      
     }
   };
   useEffect(() => {
@@ -59,7 +58,7 @@ const Header = () => {
   return (
     <header id="header">
       <div className="logoContainer">
-        <img src="/logo.png" alt="Logo" className="logo" />
+        <img src="/logo/logo.png" alt="Logo" className="logo" />
         <h3 id="navh3">IQ Global Trust</h3>
       </div>
       <nav className="nav" id="nav">

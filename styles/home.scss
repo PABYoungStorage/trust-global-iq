@@ -1,6 +1,5 @@
 .trust-home {
   width: 100%;
-  height: 100vh;
   #imageContainer {
     width: 100%;
     height: 100vh;
@@ -207,7 +206,6 @@
   .trust-home2 {
     background-color: var(--bg);
     width: 100%;
-    background-color: aliceblue;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -224,6 +222,7 @@
         gap: 40px;
         .box-b {
           padding: 25px 40px;
+          text-align: center;
           background-color: var(--light);
           border-radius: 8px;
           font-size: 25px;
@@ -276,7 +275,7 @@
       }
       // we-provide
       .we-provide {
-        padding: 70px 10px 10px 10px;
+        margin-top: 70px;
         color: var(--font-color);
         display: flex;
         flex-direction: column;
@@ -295,11 +294,13 @@
           justify-content: center;
           align-items: center;
           gap: 50px;
+          padding: 20px 10px;
+
           .pro-sub-box {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 500px;
+            width: 450px;
             padding: 20px;
             border-radius: 8px;
             background-color: var(--light);
@@ -331,12 +332,9 @@
               transform: scale(1.05);
               box-shadow: 0 0 10px var(--shadow);
             }
-            &:hover b {
-              letter-spacing: 1px;
-            }
-            &:hover img {
-              transform: translate(0, -20px);
-            }
+          }
+          .goals {
+            width: 350px;
           }
         }
         @media screen and (max-width: 580px) {
@@ -345,6 +343,109 @@
               width: 100%;
             }
           }
+        }
+        @media screen and (max-width: 480px) {
+          .provide-box {
+            .pro-sub-box {
+              flex-direction: column;
+              main {
+                justify-content: center;
+                align-items: center;
+                b,
+                span {
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // mission
+  .mission {
+    width: 100%;
+    margin-top: 50px;
+    background-image: url(/mission/world-map.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 100px 50px;
+    color: var(--font-color);
+    h1 {
+      text-align: center;
+      font-size: 60px;
+    }
+    @media screen and (max-width: 800px) {
+      padding: 50px;
+      h1 {
+        font-size: 50px;
+      }
+    }
+    @media screen and (max-width: 550px) {
+      padding: 50px 30px;
+      h1 {
+        font-size: 40px;
+      }
+    }
+    @media screen and (max-width: 450px) {
+      h1 {
+        font-size: 30px;
+      }
+    }
+  }
+  // help home less
+  .help-home-less {
+    margin-top: 100px;
+    padding: 150px 30px;
+    background-image: url(/banner/banner2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .help-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      z-index: 2;
+      color: var(--light);
+      b {
+        i {
+          font-size: 80px;
+        }
+      }
+      h1 {
+        font-size: 40px;
+        text-align: center;
+      }
+      button {
+        background-color: var(--primary);
+        color: var(--light);
+        font-weight: 600;
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+    @media screen and (max-width: 450px) {
+      .help-box {
+        h1 {
+          font-size: 30px;
         }
       }
     }
