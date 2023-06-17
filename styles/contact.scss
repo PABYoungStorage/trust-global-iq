@@ -1,5 +1,5 @@
 .imagecontainer {
-
+        padding: 20px;
 
     .into {
         display: flex;
@@ -10,8 +10,10 @@
 
     .dent {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
 
 
         .details {
@@ -57,12 +59,14 @@
                 font-size: 36px;
                 font-weight: 600;
                 color: var(--font-color);
+                text-align: center;
             }
 
             p {
                 font-size: 18px;
                 margin-top: 20px;
                 color: var(--gray);
+                text-align: center;
             }
 
 
@@ -74,43 +78,32 @@
             flex-direction: column;
             border-radius: 12px;
             box-sizing: border-box;
-            border: 1px solid;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 1);
+            // border: 1px solid;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
             background-color: var(--white);
-            margin-left: 80px;
+            // margin-left: 80px;
             gap: 20px;
-            padding: 20px 20px 20px 10px;
+            padding: 40px;
 
             h2 {
                 text-align: center;
                 margin: auto;
             }
 
-            span {
-                margin-left: 50px;
+            div {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 20px;
+
+                .msg {
+                    width: 30px;
+                    height: 30px;
+
+                }
             }
 
-            .msg {
-                width: 30px;
-                height: 30px;
-                position: absolute;
-                top: 57%;
 
-            }
-
-            .msg1 {
-                width: 30px;
-                height: 30px;
-                position: absolute;
-                top: 62%;
-            }
-
-            .msg2 {
-                width: 30px;
-                height: 30px;
-                position: absolute;
-                top: 67%;
-            }
         }
 
     }

@@ -22,22 +22,31 @@ const Info = () => {
             <input type="number" placeholder="phNo" />
             <input type="text" placeholder="subject" />
             <input type="text" placeholder="message" />
+            <div className="button">
+              <button className="btn">Send Message</button>
+            </div>
           </div>
+
+
 
         </div>
         <div className="demo">
           <h2>Contact Address</h2>
-          <span>167. V.O.C Nagar, K.N.Colony Post, Salem- 636014</span>
-          <img alt="" src="/Icons/email.png" className="msg"/>
-          <span>iqglobaltrust@gmail.com</span>
-          <img alt="" src="/Icons/email.png" className="msg1"/>
-          <span>+917904060790</span>
-          <img alt="" src="/Icons/email.png" className="msg2"/>
+          <div>
+            <img alt="" src="/Icons/email.png" className="msg" />
+            <span>167. V.O.C Nagar, K.N.Colony Post, Salem- 636014</span>
+          </div>
+          <div>
+            <img alt="" src="/Icons/email.png" className="msg" />
+            <span>iqglobaltrust@gmail.com</span>
+          </div>
+          <div>
+            <img alt="" src="/Icons/email.png" className="msg" />
+            <span>+917904060790</span>
+          </div>
         </div>
       </div>
-        <div className="button">
-          <button className="btn">Submit</button>
-        </div>
+
     </div>
 
   );
