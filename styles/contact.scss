@@ -87,6 +87,7 @@
       color: var(--font-color);
       gap: 10px;
       padding: 60px 40px;
+      transition: 0.3s ease-in-out;
       h2 {
         text-align: center;
         margin: auto;
@@ -100,11 +101,17 @@
         span {
           font-size: 18px;
           color: var(--gray);
+          text-align: left;
+          line-height: 20px;
         }
         .msg {
           color: var(--gray);
           font-size: 25px;
         }
+      }
+      &:hover {
+        transform: translate(0, -5px);
+        box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
       }
     }
   }
