@@ -1,151 +1,158 @@
 .aboutcontainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
 
-    .about-box {
-        max-width: 1300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 40px;
+  color: var(--font-color);
 
+  .about-box {
+    max-width: 1300px;
 
-        .heading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 50px;
-
-            &:hover {
-                color: var(--primary);
-            }
-        }
-
-
-        .heading1 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            // margin-left: 50px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-
-            .main {
-                display: grid;
-                grid-template-areas: auto auto;
-                width: 50%;
-                gap: 20px;
-                padding: 10px;
-                flex-wrap: wrap;
-
-                h2 {
-                    color: var(--gray-dark);
-                    font-size: 18px;
-                    font-weight: 600;
-                }
-
-                h1 {
-                    color: var(--font-color);
-                    font-size: 36px;
-                    font-weight: 600;
-
-                }
-
-                p {
-                    font-size: 18px;
-                    color: var(--grey);
-                }
-            }
-
-
-            .btn {
-                background-color: var(--primary);
-                color: var(--white);
-                margin-top: 30px;
-                padding: 15px 30px;
-            }
-
-            .img1 {
-                width: 600px;
-                height: 500px;
-                object-fit: contain;
-            }
-            @media screen and (max-width:1240px) {
-        
-                .main {
-                    width: 100%;
-                }
-    
-                .image {
-                    .img1 {
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-            
-        }
-        }
-
-        .content {
-            margin-top: 150px;
-            padding: 50px 50px;
-
-            h1 {
-                color: var(--font-color);
-                margin-bottom: 20px;
-                font-size: 36px;
-            }
-
-            p {
-                color: var(--grey);
-                font-size: 18px;
-                line-height: 1.5;
-
-            }
-        }
-
-        .point2 {
-            display: flex;
-            flex-direction: column;
-            margin-top: 50px;
-
-
-            span {
-                font-size: 18px;
-                line-height: 1.5;
-                color: var(--grey);
-            }
-        }
-
-        .peoples {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-            justify-content: center;
-            margin-top: 50px;
-
-            .person {
-                display: flex;
-                flex-wrap: wrap;
-                // margin-left: 100px;
-                justify-content: center;
-                gap: 50px;
-                align-items: center
-            }
-
-            h1 {
-                font-size: 36px;
-                color: var(--font-color);
-                margin-bottom: 40px;
-            }
-
-            .perimg {
-                width: 250px;
-                height: 250px;
-                border-radius: 20px;
-                object-fit: contain;
-            }
-        }
+    .heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 50px;
     }
+
+    .heading1 {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+
+      .main {
+        display: grid;
+        grid-template-areas: auto auto;
+        width: 50%;
+        gap: 20px;
+        padding: 10px;
+        flex-wrap: wrap;
+
+        h2 {
+          color: var(--grey);
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        h1 {
+          color: var(--font-color);
+          font-size: 36px;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 18px;
+          color: var(--grey);
+        }
+        h3 {
+          font-size: 24px;
+        }
+      }
+
+      .btn {
+        background-color: var(--primary);
+        color: var(--white);
+        padding: 15px 30px;
+      }
+
+      .image {
+        .img1 {
+          width: 600px;
+          height: 500px;
+          object-fit: contain;
+        }
+      }
+      @media screen and (max-width: 1240px) {
+        .main {
+          width: 100%;
+        }
+
+        .image {
+          margin-top: 30px;
+          .img1 {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .content {
+      padding: 50px 20px;
+      width: 100%;
+      .point {
+        p {
+          width: 50%;
+          @media screen and (max-width: 800px) {
+            width: 100%;
+          }
+        }
+      }
+
+      h1 {
+        color: var(--font-color);
+        margin-bottom: 20px;
+        font-size: 36px;
+      }
+
+      p {
+        color: var(--grey);
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+
+    .point2 {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+
+      span {
+        font-size: 17px;
+        line-height: 1.5;
+        color: var(--grey);
+        b {
+          margin-right: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .peoples {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      justify-content: center;
+      margin-top: 50px;
+
+      .person {
+        display: flex;
+        flex-wrap: wrap;
+        // margin-left: 100px;
+        justify-content: center;
+        gap: 50px;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 36px;
+        color: var(--font-color);
+        margin-bottom: 40px;
+      }
+
+      .perimg {
+        width: 250px;
+        height: 250px;
+        border-radius: 20px;
+        object-fit: contain;
+      }
+    }
+  }
 }
-   
+

@@ -3,17 +3,6 @@ export default function Services() {
     <Service />
   );
 }
-
-
-
-
-
-
-
-
-
-
-
 const Service = () => {
   return (
     <div className="servecontainer">
