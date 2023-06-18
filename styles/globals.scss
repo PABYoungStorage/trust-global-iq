@@ -6,12 +6,21 @@
 @import "services.scss";
 @import "contact.scss";
 @import "footer.scss";
+@import "admin/login.scss";
+@import "admin/home.scss";
+@import "admin/event.scss";
 
 :root {
   --footer: rgb(21, 21, 21);
   --footer-font: rgb(186, 186, 186);
   --shadow: #88888830;
-  --bg: #f8f9fa;
+  --bg: #eff1f7;
+  --bg1: #ffffff;
+  --font: #1dc9f2;
+  --font1: #2daab8;
+  --fontlight: #a5adc6;
+  --color: #2e4765;
+  // --bg: #f8f9fa;
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -56,6 +65,9 @@
 }
 html {
   scroll-behavior: smooth;
+}
+textarea{
+  resize: none;
 }
 .btn {
   border: 0;

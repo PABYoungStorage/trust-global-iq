@@ -163,7 +163,7 @@ const Goals = () => {
                 <img
                   src={a.src}
                   alt={a.name}
-                  style={{ width: "50px", height: "50px" }}
+                  style={{ width: "40px", height: "40px" }}
                 />
                 <main>
                   <b>{a.name}</b>
