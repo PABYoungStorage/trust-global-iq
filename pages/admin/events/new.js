@@ -27,10 +27,10 @@ const Events = (props) => {
               style={{ color: "#a5adc6" }}
             ></i>
             <li className="breadcrumb-item">
-              <a>Admin</a>
+              <a onClick={() => props.changeMenu("/admin")}>Admin</a>
             </li>
             <li className="breadcrumb-item">
-              <a>Events</a>
+              <a onClick={() => props.changeMenu("/admin/events")}>Events</a>
             </li>
             <li
               className="breadcrumb-item active"

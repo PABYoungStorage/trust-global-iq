@@ -71,7 +71,7 @@ export default function Admin({ children }) {
               <a
                 onClick={() => menuChange("/admin/volunteers")}
                 className={
-                  adminMenu == "Volunteers" ? "menulink active" : "menulink"
+                  adminMenu == "volunteers" ? "menulink active" : "menulink"
                 }
               >
                 <i className="bi bi-badge-vo"></i>Volunteers

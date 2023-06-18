@@ -1,5 +1,5 @@
 .con-event {
-  padding: 20px 40px;
+  padding: 20px;
   .event-main {
     display: flex;
     justify-content: center;
@@ -57,7 +57,7 @@
   }
   .event-list {
     padding: 30px;
-    margin-top: 20px;
+    margin-top: 50px;
     h2 {
       text-transform: capitalize;
       text-align: center;
@@ -75,7 +75,7 @@
         display: flex;
         flex-direction: column;
         background-color: var(--light);
-        padding: 20px 30px;
+        padding: 10px;
         box-shadow: 5px 4px 10px var(--shadow);
         border-radius: 10px;
         overflow: hidden;
@@ -110,7 +110,7 @@
             justify-content: center;
             align-items: center;
             color: var(--light);
-            transition: 0.2s ease-in-out;
+            transition: 0.3s ease-in-out;
             span {
               display: block;
               text-transform: capitalize;
@@ -152,10 +152,9 @@
           border-radius: 10px;
         }
         .content {
-          padding: 20px;
+          padding: 15px 20px 5px;
           display: flex;
           flex-direction: column;
-          gap: 4px;
           .title {
             font-size: 19px;
             color: var(--gray);
@@ -181,7 +180,7 @@
               &:nth-child(1) {
                 width: 60%;
                 height: 100%;
-                background-color: var(--primary);
+                background-color: var(--success);
                 border-radius: 20px;
               }
               &:nth-child(2) {
@@ -191,7 +190,7 @@
                 position: absolute;
                 width: 18px;
                 height: 150%;
-                background-color: var(--primary);
+                background-color: var(--success);
                 &::before {
                   content: "";
                   width: 100%;
@@ -203,6 +202,23 @@
                 }
               }
             }
+          }
+          button {
+            margin-top: 12px;
+            background-color: var(--purple);
+            color: var(--light);
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 480px) {
+      padding: 0px;
+    }
+    @media screen and (max-width: 395px) {
+      .list-of-events {
+        .event-card {
+          img {
+            width: 100%;
           }
         }
       }

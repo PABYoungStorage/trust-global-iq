@@ -64,14 +64,3 @@ const Dashboard = () => {
     </div>
   );
 };
-
-
-const Volunteers = () => {
-  return <>volunteers</>;
-};
-const Gallery = () => {
-  return <>gallery</>;
-};
-const Banner = () => {
-  return <>banner</>;
-};

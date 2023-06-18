@@ -9,6 +9,9 @@
 @import "admin/login.scss";
 @import "admin/home.scss";
 @import "admin/event.scss";
+@import "admin/gallery.scss";
+@import "admin/volunteers.scss";
+@import "admin/banner.scss";
 
 :root {
   --footer: rgb(21, 21, 21);
@@ -66,7 +69,7 @@
 html {
   scroll-behavior: smooth;
 }
-textarea{
+textarea {
   resize: none;
 }
 .btn {

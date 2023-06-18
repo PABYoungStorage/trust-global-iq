@@ -27,7 +27,7 @@ const Events = (props) => {
               style={{ color: "#a5adc6" }}
             ></i>
             <li className="breadcrumb-item">
-              <a>Admin</a>
+              <a onClick={() => props.changeMenu("/admin")}>Admin</a>
             </li>
             <li
               className="breadcrumb-item active"
@@ -62,7 +62,7 @@ const Events = (props) => {
           <h2>events list</h2>
           <div className="list-of-events">
             {[1, 2, 3, 4, 5].map((a) => (
-              <div className="event-card">
+              <div className="event-card" key={a}>
                 <div className="advance-tool">
                   <div className="edit">
                     <i class="bi bi-pencil-square"></i>
@@ -82,6 +82,12 @@ const Events = (props) => {
                     <span></span>
                     <span></span>
                   </div>
+                  <button
+                    className="btn"
+                    onClick={() => props.changeMenu(`/admin/gallery/${a}`)}
+                  >
+                    View Gallery
+                  </button>
                 </div>
               </div>
             ))}
