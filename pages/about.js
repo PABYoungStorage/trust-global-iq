@@ -22,10 +22,7 @@ const AboutBox = () => {
         <div className="heading1">
           <div className="main">
             <h2>Anytime Anywhere</h2>
-            <h1>
-              We Are Leading Community Care <br />
-              Providers
-            </h1>
+            <h1>We Are Leading Community Care Providers</h1>
             <p>
               We are a team of registered nurses with over 25 years of
               experience in various clinical setings including critical care{" "}
@@ -52,42 +49,55 @@ const AboutBox = () => {
           <div className="point">
             <h1>Who we are</h1>
             <p>
-              We are a team of registered nurses with
-              over 25 years of experience in various
-              clinical setings including critical care
-               emergency, aged care, disability and 
-              community care. We are committed to 
-              provide customized care to meet 
-              individual needs.
+              We are a team of registered nurses with over 25 years of
+              experience in various clinical setings including critical care
+              emergency, aged care, disability and community care. We are
+              committed to provide customized care to meet individual needs.
             </p>
           </div>
 
           <div className="point2">
             <h1>What We provide</h1>
-            <span className="emoji">&#9989; Community Nursing Care</span>
             <span className="emoji">
-              &#9989;High Intensity Personal Activities
+              <b>&#9989;</b>Community Nursing Care
             </span>
             <span className="emoji">
-              &#9989; Assistance with Daily Personal Activities
+              <b>&#9989;</b>High Intensity Personal Activities
             </span>
             <span className="emoji">
-              &#9989; Assistance with Household Tasks
+              <b>&#9989;</b>Assistance with Daily Personal Activities
             </span>
             <span className="emoji">
-              &#9989; Assistance with Community and Civic Participation
+              <b>&#9989;</b>Assistance with Household Tasks
             </span>
             <span className="emoji">
-              &#9989; Innovative Community Participation & Development of Daily
-              Living & Life Skills
+              <b>&#9989;</b>Assistance with Community and Civic Participation
             </span>
-            <span className="emoji">&#9989; High Intensity Nursing Care</span>
-            <span className="emoji">&#9989; PEG Feeding</span>
-            <span className="emoji">&#9989; Wound Care</span>
-            <span className="emoji">&#9989; Subcutaneous Injections</span>
-            <span className="emoji">&#9989; Bowel Care</span>
-            <span className="emoji">&#9989; Catheter care</span>
-            <span className="emoji">&#9989; Transportation Services</span>
+            <span className="emoji">
+              <b>&#9989;</b>Innovative Community Participation & Development of
+              Daily Living & Life Skills
+            </span>
+            <span className="emoji">
+              <b>&#9989;</b>High Intensity Nursing Care
+            </span>
+            <span className="emoji">
+              <b>&#9989;</b>PEG Feeding
+            </span>
+            <span className="emoji">
+              <b>&#9989;</b>Wound Care
+            </span>
+            <span className="emoji">
+              <b>&#9989;</b>Subcutaneous Injections
+            </span>
+            <span className="emoji">
+              <b>&#9989;</b>Bowel Care
+            </span>
+            <span className="emoji">
+              <b>&#9989;</b>Catheter care
+            </span>
+            <span className="emoji">
+              <b>&#9989;</b>Transportation Services
+            </span>
           </div>
         </div>
 

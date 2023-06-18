@@ -59,10 +59,12 @@
         padding: 15px 30px;
       }
 
-      .img1 {
-        width: 600px;
-        height: 500px;
-        object-fit: contain;
+      .image {
+        .img1 {
+          width: 600px;
+          height: 500px;
+          object-fit: contain;
+        }
       }
       @media screen and (max-width: 1240px) {
         .main {
@@ -70,6 +72,7 @@
         }
 
         .image {
+          margin-top: 30px;
           .img1 {
             width: 100%;
             height: 100%;
@@ -79,9 +82,16 @@
     }
 
     .content {
-      padding: 50px 50px;
+      padding: 50px 20px;
       width: 100%;
-      background-color: aqua;
+      .point {
+        p {
+          width: 50%;
+          @media screen and (max-width: 800px) {
+            width: 100%;
+          }
+        }
+      }
 
       h1 {
         color: var(--font-color);
@@ -102,9 +112,13 @@
       margin-top: 50px;
 
       span {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.5;
         color: var(--grey);
+        b {
+          margin-right: 10px;
+          font-size: 14px;
+        }
       }
     }
 
