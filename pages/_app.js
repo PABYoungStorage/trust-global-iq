@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
       <ScrollToTopButton />
       <Component {...pageProps} />
       <ScrollToTopButton />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

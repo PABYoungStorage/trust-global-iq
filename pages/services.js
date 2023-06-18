@@ -54,7 +54,7 @@ const Service = () => {
 
 const ServicesList = [
   {
-    src: "/servicons/si1.png",
+    src: "/servicons/online-learning.png",
     value: "Expanding knowledge and skills."
   },
   {
@@ -74,19 +74,19 @@ const ServicesList = [
     value: "Fostering collaboration and engagement."
   },
   {
-    src: "/servicons/book-stack.png",
+    src: "/servicons/test.png",
     value: "Ensuring education is available to all."
   },
   {
-    src: "/servicons/book-stack.png",
+    src: "/servicons/notebook.png",
     value: "Offering financial assistance for students."
   },
   {
-    src: "/servicons/book-stack.png",
+    src: "/servicons/graduation.png",
     value: "Providing guidance and role models."
   },
   {
-    src: "/servicons/book-stack.png",
+    src: "/servicons/read.png",
     value: " Promoting inquiry and innovation."
   },
   {
@@ -94,11 +94,11 @@ const ServicesList = [
     value: "Engaging with the wider community."
   },
   {
-    src: "/servicons/book-stack.png",
+    src: "/servicons/global-education.png",
     value: "Promoting diversity and equity in education."
   },
   {
-    src: "/servicons/book-stack.png",
+    src: "/servicons/puzzle.png",
     value: " Focusing on measurable outcomes and positive change."
   },
 ];
