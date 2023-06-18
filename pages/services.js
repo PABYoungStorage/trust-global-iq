@@ -9,7 +9,6 @@ export default function Services() {
     </>
   );
 }
-
 const Service = () => {
   return (
     <div className="servecontainer">
@@ -56,51 +55,51 @@ const Service = () => {
 
 const ServicesList = [
   {
-    src: "/servicons/si1.png",
+    src: "/servicons/online-learning.png",
     value: "Expanding knowledge and skills.",
   },
   {
-    src: "/servicons/si2.png",
+    src: "/servicons/scholarship.png",
     value: "Encouraging personal growth and development.",
   },
   {
-    src: "/servicons/si3.png",
+    src: "/servicons/studying.png",
     value: "Providing equal educational chances.",
   },
   {
-    src: "/servicons/si4.png",
+    src: "/servicons/homework.png",
     value: "Offering guidance and assistance.",
   },
   {
-    src: "/servicons/si5.png",
+    src: "/servicons/book-stack.png",
     value: "Fostering collaboration and engagement.",
   },
   {
-    src: "/servicons/si6.png",
+    src: "/servicons/test.png",
     value: "Ensuring education is available to all.",
   },
   {
-    src: "/servicons/si7.png",
+    src: "/servicons/notebook.png",
     value: "Offering financial assistance for students.",
   },
   {
-    src: "/servicons/si10.png",
+    src: "/servicons/graduation.png",
     value: "Providing guidance and role models.",
   },
   {
-    src: "/servicons/si11.png",
+    src: "/servicons/read.png",
     value: " Promoting inquiry and innovation.",
   },
   {
-    src: "/servicons/si12.png",
+    src: "/servicons/online-learning.png",
     value: "Engaging with the wider community.",
   },
   {
-    src: "/servicons/si13.png",
+    src: "/servicons/global-education.png",
     value: "Promoting diversity and equity in education.",
   },
   {
-    src: "/servicons/si14.png",
+    src: "/servicons/puzzle.png",
     value: " Focusing on measurable outcomes and positive change.",
   },
 ];

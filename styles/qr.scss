@@ -1,0 +1,68 @@
+.qrcontainer {
+    padding: 20px;
+    margin-top: 50px;
+
+    .qr-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+
+        h1{
+            color: var(--font-color);
+            font-size: 36px;
+            font-weight: 600;
+            text-transform: capitalize;
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+
+    .description {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // margin-top: 50px;
+
+        
+    }
+
+    .desc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            font-size: 18px;
+            color: var(--primary);
+            font-weight: 300;
+        }
+    }
+
+    .contain {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        // border: 1px solid black;
+      box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+      line-height: 30px;
+        transition: 0.3s ease-in-out;
+        flex-wrap: wrap;
+        &:hover {
+            transform: translate(0, -5px);
+            box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            color: var(--font-color);
+            font-size: 18px;
+            
+            b {
+                color: var(--primary);
+            }
+
+        }
+    }
+}

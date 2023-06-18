@@ -75,7 +75,7 @@ const Header = () => {
           className="link"
           onClick={() => ChangeMenu("causes")}
         >
-          causes
+          event
         </span>
         <span
           name="services"
@@ -92,7 +92,7 @@ const Header = () => {
           contact
         </span>
       </nav>
-      <div className="btn donate">donate now</div>
+      <div className="btn donate" onClick={() => ChangeMenu("donate")}>donate now</div>
       <div className="res-menu" onClick={Menu}>
         <span></span>
         <span></span>

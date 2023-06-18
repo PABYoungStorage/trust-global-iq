@@ -1,7 +1,13 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-
+import { useRouter } from "next/router";
 export default function Home() {
+
+  const router = useRouter()
+
+  const changeroute = (donate) => {
+    router.push(donate)
+  }
   const [imageList, setImageList] = useState([
     {
       name: "image1",
@@ -64,7 +70,7 @@ export default function Home() {
       </Head>
       <div className="trust-home">
         <HomeImageGallery imageList={imageList} />
-        <HomeSecction2 />
+        <HomeSecction2 donate={changeroute}/>
         <Mission />
         <Goals />
       </div>
@@ -88,7 +94,7 @@ const HomeImageGallery = (props) => {
   );
 };
 
-const HomeSecction2 = () => {
+const HomeSecction2 = (props) => {
   return (
     <div className="trust-home2 section">
       <section>
@@ -101,7 +107,7 @@ const HomeSecction2 = () => {
           <h1>Over 93% of all Donations go directly to Projects.</h1>
           <span>Under 7% for admin, fundraising, and salaries.</span>
           <b>Thank you for your continued Support</b>
-          <button className="btn">
+          <button className="btn" onClick={() => props.donate("donate")}>
             <i className="bi bi-emoji-heart-eyes-fill"></i>donate now
           </button>
         </div>

@@ -1,3 +1,4 @@
+
 import Head from "next/head";
 
 export default function Contact() {
@@ -15,11 +16,13 @@ const Info = () => {
   return (
     <div className="contact">
       <div className="into">
+
         <h1>Contact Us</h1>
       </div>
       <div className="dent">
         <div className="details">
           <h1>Send Us a Message</h1>
+
           <p>
             Your email address will not be published. Required fields are marked{" "}
           </p>
@@ -31,10 +34,12 @@ const Info = () => {
             <textarea type="text" placeholder="Message*" required />
             <button className="btn">Send Message</button>
           </div>
+
         </div>
         <div className="demo">
           <h2>Contact Address</h2>
           <div>
+
             <i class="bi bi-house-fill msg"></i>
             <span>
               167. V.O.C Nagar, K.N.Colony Post,
@@ -47,10 +52,13 @@ const Info = () => {
           </div>
           <div>
             <i class="bi bi-telephone-fill msg"></i>
+
             <span>+917904060790</span>
           </div>
         </div>
       </div>
+
     </div>
   );
 };
+
