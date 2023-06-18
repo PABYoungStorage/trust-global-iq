@@ -6,6 +6,10 @@
 @import "services.scss";
 @import "contact.scss";
 @import "footer.scss";
+@import "adminbio.scss";
+@import "qr.scss";
+
+
 
 
 :root {
@@ -116,8 +120,4 @@ input[type="number"] {
   height: 30px;
   object-fit: contain;
   transform: rotate(-45deg);
-}
-
-body {
-  height: 200vh;
 }

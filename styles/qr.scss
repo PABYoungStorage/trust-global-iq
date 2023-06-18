@@ -1,0 +1,45 @@
+.qrcontainer {
+    padding: 20px;
+    margin-top: 50px;
+
+    .qr-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+
+        h1{
+            color: var(--font-color);
+            font-size: 36px;
+            font-weight: 600;
+            text-transform: capitalize;
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+
+    .description {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 50px;
+
+
+        p {
+            width: 60%;
+            font-size: 20px;
+            color: var(--gray);
+            line-height: 30px;
+            
+            &:hover {
+                color: var(--primary);
+            }
+        }
+
+        .qr {
+            height: 500px;
+        }
+        
+    }
+}

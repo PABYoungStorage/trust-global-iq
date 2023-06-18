@@ -1,18 +1,25 @@
-
+import { useRouter } from "next/router";
 import Head from "next/head";
 
 export default function About() {
+  const router = useRouter()
+  const donate = () => {
+    router.push("about/adminbio")
+  }
   return (
     <>
       <Head>
         <title>About - IQ Global Trust</title>
       </Head>
-      <AboutBox />
+
+      <AboutBox donate={donate}/>
+
     </>
   );
 }
 
-const AboutBox = () => {
+
+const AboutBox = (props) => {
   return (
     <div className="aboutcontainer">
       <div className="about-box">
@@ -26,20 +33,15 @@ const AboutBox = () => {
 
             <h1>We Are Leading Community Care Providers</h1>
             <p>
-              We are a team of registered nurses with over 25 years of
-              experience in various clinical setings including critical care{" "}
-              <br /> emergency, aged care, disability and community care. We are
-              committed to provide customized care to meet individual needs.
+            Welcome to <b>IQ Global Trust</b>, a dynamic platform designed to empower learners of all ages and backgrounds. We are passionate about providing high-quality education that is accessible, engaging, and relevant. Join us on this exciting educational journey as we unlock knowledge, foster curiosity, and inspire lifelong learning.
             </p>
             <p>
-              Duis cursus, mi quis viverra ornare, eros dolor interdum nulla{" "}
-              <br />
-              ut sed diam libero erat. Aenean faucibus nibh et justo cursus.
+            At  <b>IQ Global Trust</b>, our mission is to revolutionize education by offering innovative and interactive learning experiences. We believe that education should be personalized, flexible, and tailored to individual needs. Our goal is to empower learners to discover their full potential and equip them with the skills, knowledge, and confidence to thrive in a rapidly evolving world.
             </p>
-            <h3>"Over 20 Years of Accomplishments”</h3>
+            <h3>"Its Our 1st Years of Accomplishments”</h3>
 
             <div className="button">
-              <button className="btn">Learn More about Us</button>
+              <button className="btn" onClick={props.donate}>Learn More about Us</button>
             </div>
           </div>
 
@@ -52,10 +54,7 @@ const AboutBox = () => {
           <div className="point">
             <h1>Who we are</h1>
             <p>
-              We are a team of registered nurses with over 25 years of
-              experience in various clinical setings including critical care
-              emergency, aged care, disability and community care. We are
-              committed to provide customized care to meet individual needs.
+            As an educational trustee, we are a dedicated group of individuals committed to advancing the field of education and empowering future generations. With a strong belief in the transformative power of education, we aim to create positive and lasting impacts in the lives of learners and communities.
             </p>
           </div>
 
@@ -63,16 +62,16 @@ const AboutBox = () => {
             <h1>What We provide</h1>
 
             <span className="emoji">
-              <b>&#9989;</b>Community Nursing Care
+              <b>&#9989;</b>Empowering learners and advancing education for a brighter future.
             </span>
             <span className="emoji">
-              <b>&#9989;</b>High Intensity Personal Activities
+              <b>&#9989;</b>Driving educational excellence and equity through comprehensive support and strategic initiatives.
             </span>
             <span className="emoji">
               <b>&#9989;</b>Assistance with Daily Personal Activities
             </span>
             <span className="emoji">
-              <b>&#9989;</b>Assistance with Household Tasks
+              <b>&#9989;</b>Enabling access, fostering innovation, and empowering learners through transformative educational initiatives.
             </span>
             <span className="emoji">
               <b>&#9989;</b>Assistance with Community and Civic Participation
@@ -82,25 +81,25 @@ const AboutBox = () => {
               Daily Living & Life Skills
             </span>
             <span className="emoji">
-              <b>&#9989;</b>High Intensity Nursing Care
+              <b>&#9989;</b>Empowering education through strategic investments and impactful initiatives.
             </span>
             <span className="emoji">
-              <b>&#9989;</b>PEG Feeding
+              <b>&#9989;</b>Catalyzing educational opportunities and nurturing lifelong learning for all.
             </span>
             <span className="emoji">
-              <b>&#9989;</b>Wound Care
+              <b>&#9989;</b>Elevating education through holistic support and transformative initiatives.
             </span>
             <span className="emoji">
-              <b>&#9989;</b>Subcutaneous Injections
+              <b>&#9989;</b>Igniting educational potential through comprehensive support and innovative programs.
             </span>
             <span className="emoji">
-              <b>&#9989;</b>Bowel Care
+              <b>&#9989;</b> educational advancement through strategic investments and transformative initiatives.
             </span>
             <span className="emoji">
-              <b>&#9989;</b>Catheter care
+              <b>&#9989;</b>Fueling educational progress through dedicated support and transformative initiatives.
             </span>
             <span className="emoji">
-              <b>&#9989;</b>Transportation Services
+              <b>&#9989;</b>learners, fostering innovation, and shaping the future of education.
             </span>
 
           </div>
