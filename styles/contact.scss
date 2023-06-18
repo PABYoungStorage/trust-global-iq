@@ -66,12 +66,13 @@
       }
       @media screen and (max-width: 720px) {
         .box {
-            display: flex;
-            flex-direction: column;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          input,
+          textarea {
             width: 100%;
-            input,textarea{
-                width: 100%;
-            }
+          }
         }
       }
     }
@@ -96,13 +97,13 @@
         justify-content: flex-start;
         align-items: center;
         gap: 10px;
-        span{
-            font-size: 18px;
-            color: var(--gray);
+        span {
+          font-size: 18px;
+          color: var(--gray);
         }
         .msg {
-          width: 30px;
-          height: 30px;
+          color: var(--gray);
+          font-size: 25px;
         }
       }
     }

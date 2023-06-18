@@ -1,5 +1,14 @@
+import Head from "next/head";
+
 export default function Contact() {
-  return <Info />;
+  return (
+    <>
+      <Head>
+        <title>Contact - IQ Global Trust</title>
+      </Head>
+      <Info />
+    </>
+  );
 }
 
 const Info = () => {
@@ -26,15 +35,18 @@ const Info = () => {
         <div className="demo">
           <h2>Contact Address</h2>
           <div>
-            <img alt="" src="/icons/email.png" className="msg" />
-            <span>167. V.O.C Nagar, K.N.Colony Post, Salem- 636014</span>
+            <i class="bi bi-house-fill msg"></i>
+            <span>
+              167. V.O.C Nagar, K.N.Colony Post,
+              <br /> Salem- 636014
+            </span>
           </div>
           <div>
-            <img alt="" src="/icons/email.png" className="msg" />
+            <i class="bi bi-envelope-at-fill msg"></i>
             <span>iqglobaltrust@gmail.com</span>
           </div>
           <div>
-            <img alt="" src="/icons/email.png" className="msg" />
+            <i class="bi bi-telephone-fill msg"></i>
             <span>+917904060790</span>
           </div>
         </div>
