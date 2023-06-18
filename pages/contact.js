@@ -34,7 +34,7 @@ const Info = () => {
           <h2>Contact Address</h2>
           <div>
             <img alt="" src="/Icons/email.png" className="msg" />
-            <span>167. V.O.C Nagar, K.N.Colony Post, Salem- 636014</span>
+            <span>D.No,167,V O C Nagar,K N Colony, Ammapet<br/> Salem, TamilNadu – 636 014 (Rental Place)</span>
           </div>
           <div>
             <img alt="" src="/Icons/email.png" className="msg" />
