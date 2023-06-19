@@ -1,8 +1,12 @@
 import { useRouter } from "next/router";
+import Head from "next/head";
 export default function Home() {
   const router = useRouter();
   return (
     <>
+      <Head>
+        <title>Event - IQ Global Trust</title>
+      </Head>
       <div className="event-home-tab">
         <h1>List of Events</h1>
         <div className="list-of-events">

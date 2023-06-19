@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
 export default function EventId() {
@@ -6,6 +7,9 @@ export default function EventId() {
   const [media, setMedia] = useState("image");
   return (
     <>
+      <Head>
+        <title>Event {id}</title>
+      </Head>
       <div className="id-event-list">
         <h1>EDUCATION</h1>
         <div className="media-type">
@@ -22,7 +26,7 @@ export default function EventId() {
             videos
           </span>
         </div>
-        
+
         <div className="list-of-medias">
           {media == "image" &&
             imglist.map((a) => (
