@@ -1,6 +1,7 @@
 // admin page is an single page application without routing
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function Admin({ children }) {
   const [adminMenu, setAdminMenu] = useState();
@@ -46,6 +47,9 @@ export default function Admin({ children }) {
 
   return (
     <>
+      <Head>
+        <title>Admin Panel</title>
+      </Head>
       <div className="admin-home">
         <div className="container-home">
           <menu id="menu">
