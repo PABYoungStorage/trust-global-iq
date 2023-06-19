@@ -3,6 +3,7 @@
 @import "header.scss";
 @import "home.scss";
 @import "about.scss";
+@import "events.scss";
 @import "services.scss";
 @import "contact.scss";
 @import "footer.scss";
@@ -14,7 +15,6 @@
 @import "admin/banner.scss";
 @import "adminbio.scss";
 @import "qr.scss";
-
 
 :root {
   --footer: rgb(21, 21, 21);
@@ -38,7 +38,7 @@
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #fff;
-  --grey:  #696687;
+  --grey: #696687;
   --gray: #6c757d;
   --gray-dark: #343a40;
   --font-color: #3b3663;

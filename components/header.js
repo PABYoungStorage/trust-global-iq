@@ -67,32 +67,38 @@ const Header = () => {
         <span name="home" className="link" onClick={() => ChangeMenu("/")}>
           home
         </span>
-        <span name="about" className="link" onClick={() => ChangeMenu("about")}>
+        <span
+          name="about"
+          className="link"
+          onClick={() => ChangeMenu("/about")}
+        >
           about
         </span>
         <span
-          name="causes"
+          name="events"
           className="link"
-          onClick={() => ChangeMenu("causes")}
+          onClick={() => ChangeMenu("/events")}
         >
-          event
+          events
         </span>
         <span
           name="services"
           className="link"
-          onClick={() => ChangeMenu("services")}
+          onClick={() => ChangeMenu("/services")}
         >
           services
         </span>
         <span
           name="contact"
           className="link"
-          onClick={() => ChangeMenu("contact")}
+          onClick={() => ChangeMenu("/contact")}
         >
           contact
         </span>
       </nav>
-      <div className="btn donate" onClick={() => ChangeMenu("donate")}>donate now</div>
+      <div className="btn donate" onClick={() => ChangeMenu("/donate")}>
+        donate now
+      </div>
       <div className="res-menu" onClick={Menu}>
         <span></span>
         <span></span>

@@ -69,6 +69,9 @@ header {
   .donate {
     background-color: var(--primary);
     color: var(--light);
+    &:hover {
+      background-color: var(--primary);
+    }
   }
   .res-menu {
     display: none;
