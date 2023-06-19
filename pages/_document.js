@@ -4,7 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-      <meta name="theme-color" content="#ff5200" />
+        <meta name="theme-color" content="#ff5200" />
+        <link rel="icon" href="/logo/logo.png" />
       </Head>
       <body>
         <Main />
