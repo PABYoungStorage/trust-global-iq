@@ -1,23 +1,101 @@
+import { API, GetCookieToken, Server } from "@/api/apiCalls";
 import Admin from "@/components/adminBase";
+import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function AdminEvents() {
+export default function AdminEvents({ data }) {
   const router = useRouter();
   const [media, setMedia] = useState("exist");
   const changeMenu = (n) => {
     router.push(n);
   };
+  const [error, setError] = useState({ message: "", status: false });
+  const AcceprVol = async (id) => {
+    try {
+      const responce = await axios.patch(
+        `${Server + API.volunteerId(id)}?uid=${GetCookieToken()}`
+      );
+      const data = responce.data;
+      if (
+        !(
+          Object.keys(data).findIndex((a) => a.startsWith("status")) >= 0 &&
+          data.status == true
+        )
+      ) {
+        setError((a) => ({ ...a, message: data.message, status: true }));
+      } else {
+        router.reload();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const RejectVol = async (id) => {
+    try {
+      const responce = await axios.delete(
+        `${Server + API.volunteerId(id)}?uid=${GetCookieToken()}`
+      );
+      const data = responce.data;
+      if (
+        !(
+          Object.keys(data).findIndex((a) => a.startsWith("status")) >= 0 &&
+          data.status == true
+        )
+      ) {
+        setError((a) => ({ ...a, message: data.message, status: true }));
+      } else {
+        router.reload();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <Admin>
-        <Volunteers changeMenu={changeMenu} media={media} setMedia={setMedia} />
+        {error.status && (
+          <div
+            className="alert alert-danger alert-dismissible fade show"
+            role="alert"
+            style={{
+              width: "fit-content",
+              position: "fixed",
+              right: "20px",
+              top: "20px",
+              zIndex: 1000,
+            }}
+          >
+            <strong>Login Error!</strong> {error.message}
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+              onClick={() =>
+                setError((a) => ({ ...a, message: "", status: false }))
+              }
+            ></button>
+          </div>
+        )}
+        <Volunteers
+          data={data}
+          changeMenu={changeMenu}
+          media={media}
+          setMedia={setMedia}
+          AcceprVol={AcceprVol}
+          RejectVol={RejectVol}
+        />
       </Admin>
     </>
   );
 }
 
 const Volunteers = (props) => {
+  const voulenteerExist =
+    props.data && props.data.filter((a) => a.status == true);
+  const voulenteerNew =
+    props.data && props.data.filter((a) => a.status == false);
   return (
     <>
       <div className="con-volunteer">
@@ -59,36 +137,58 @@ const Volunteers = (props) => {
           </div>
           <div className="list-of-volunteer">
             {props.media == "exist" &&
-              users.map((a, i) => (
+              voulenteerExist.map((a, i) => (
                 <div className="volunteer-card" key={a.name + i}>
-                  <img src={a.src} />
+                  <img src={`${Server}/public/volunteers/${a.image_name}`} />
                   <span>
-                    name <b>{a.name}</b>
+                    name <b>{a.firstname}</b>
                   </span>
                   <span>
-                    country <b>{a.country}</b>
+                    profession <b>{a.profession}</b>
+                  </span>
+                  <span>
+                    phone <b>{a.phone}</b>
+                  </span>
+                  <span>
+                    district <b>{a.district}</b>
                   </span>
                   <span>
                     start <b>{a.state}</b>
                   </span>
                 </div>
               ))}
-              {props.media == "new" &&
-              users.map((a, i) => (
+            {props.media == "new" &&
+              voulenteerNew.map((a, i) => (
                 <div className="volunteer-card" key={a.name + i}>
-                  <img src={a.src} />
+                  <img src={`${Server}/public/volunteers/${a.image_name}`} />
                   <span>
-                    name <b>{a.name}</b>
+                    name <b>{a.firstname}</b>
                   </span>
                   <span>
-                    country <b>{a.country}</b>
+                    profession <b>{a.profession}</b>
+                  </span>
+                  <span>
+                    phone <b>{a.phone}</b>
+                  </span>
+                  <span>
+                    district <b>{a.district}</b>
                   </span>
                   <span>
                     start <b>{a.state}</b>
                   </span>
                   <div className="appr">
-                    <button className="btn deny">deny</button>
-                    <button className="btn accept">accept</button>
+                    <button
+                      className="btn deny"
+                      onClick={() => props.RejectVol(a._id)}
+                    >
+                      deny
+                    </button>
+                    <button
+                      className="btn accept"
+                      onClick={() => props.AcceprVol(a._id)}
+                    >
+                      accept
+                    </button>
                   </div>
                 </div>
               ))}
@@ -125,3 +225,11 @@ const users = [
     state: "TamilNadu",
   },
 ];
+
+export async function getServerSideProps(context) {
+  const cookie = context.req.cookies.token;
+  const responce = await axios.get(`${Server + API.volunteers}?uid=${cookie}`);
+  return {
+    props: { data: responce.data },
+  };
+}

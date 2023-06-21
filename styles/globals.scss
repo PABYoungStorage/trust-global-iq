@@ -6,6 +6,7 @@
 @import "events.scss";
 @import "services.scss";
 @import "contact.scss";
+@import "voulenteer.scss";
 @import "footer.scss";
 @import "admin/login.scss";
 @import "admin/home.scss";
@@ -133,4 +134,16 @@ input[type="number"] {
   height: 30px;
   object-fit: contain;
   transform: rotate(-45deg);
+}
+
+.primary {
+  background-color: var(--success);
+  color: var(--light);
+  padding: 5px 10px;
+  margin-top: 10px;
+  &:hover{
+    background-color: var(--success);
+    color: var(--light);
+    filter: brightness(90%);
+  }
 }

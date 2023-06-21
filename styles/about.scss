@@ -1,5 +1,4 @@
 .aboutcontainer {
-
   width: 100%;
   display: flex;
   justify-content: center;
@@ -32,10 +31,9 @@
         gap: 20px;
         padding: 10px;
         flex-wrap: wrap;
-    
 
         b {
-            color: var(--primary);
+          color: var(--primary);
         }
 
         h2 {
@@ -131,34 +129,48 @@
 
     .peoples {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       justify-content: space-around;
       align-items: center;
       justify-content: center;
       margin-top: 50px;
-
-      .person {
-        display: flex;
-        flex-wrap: wrap;
-        // margin-left: 100px;
-        justify-content: center;
-        gap: 50px;
-        align-items: center;
-      }
-
       h1 {
         font-size: 36px;
         color: var(--font-color);
         margin-bottom: 40px;
       }
-
-      .perimg {
-        width: 250px;
-        height: 250px;
-        border-radius: 20px;
-        object-fit: contain;
+      .person {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        .perimg {
+          width: 250px;
+          height: 250px;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+        .apply-voulenteer-box {
+          width: 250px;
+          height: 250px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          border-radius: 10px;
+          background-color: var(--shadow);
+          border: 2px dashed var(--primary);
+          cursor: pointer;
+          i {
+            font-size: 60px;
+          }
+          b {
+            font-size: 24px;
+            text-transform: capitalize;
+          }
+        }
       }
     }
   }
 }
-

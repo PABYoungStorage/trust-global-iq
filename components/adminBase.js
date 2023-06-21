@@ -2,14 +2,47 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { Fetcher, API } from "@/api/apiCalls";
 
 export default function Admin({ children }) {
   const [adminMenu, setAdminMenu] = useState();
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
   const menuChange = (n) => {
     router.push(n);
   };
   useEffect(() => {
+    // let cookies = document.cookie.split(";");
+
+    // if (cookies[0] == "") {
+    //   router.push("/admin/login");
+    // } else {
+    //   (async () => {
+    //     cookies.filter((a) => a.startsWith("token="));
+    //     if (cookies.length >= 1) {
+    //       console.log(cookies[0].split("=")[1]);
+    //       const responce = await Fetcher({
+    //         route: API.usercheck(cookies[0].split("=")[1]),
+    //         method: "GET",
+    //       })
+    //         .then((res) => res.json())
+    //         .catch((e) => console.log(e));
+    //       if (
+    //         !(
+    //           Object.keys(responce).findIndex((a) => a.startsWith("status")) >=
+    //             0 && responce.status == true
+    //         )
+    //       ) {
+    //         router.push("/admin/login");
+    //       } else {
+    //         setLoading(() => false);
+    //       }
+    //     } else {
+    //       router.push("/admin/login");
+    //     }
+    //   })();
+    // }
+
     let path = window.location.pathname.split("/");
     path.shift(0);
     if (path.length > 1 && path[0] == "admin") {
@@ -50,6 +83,7 @@ export default function Admin({ children }) {
       <Head>
         <title>Admin Panel</title>
       </Head>
+
       <div className="admin-home">
         <div className="container-home">
           <menu id="menu">

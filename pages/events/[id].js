@@ -1,9 +1,10 @@
+import { API, Server } from "@/api/apiCalls";
+import axios from "axios";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
-export default function EventId() {
+export default function EventId({ id, data }) {
   const router = useRouter();
-  const { id } = router.query;
   const [media, setMedia] = useState("image");
   return (
     <>
@@ -29,15 +30,19 @@ export default function EventId() {
 
         <div className="list-of-medias">
           {media == "image" &&
-            imglist.map((a) => (
+            data &&
+            data.images.length >= 1 &&
+            data.images.map((a) => (
               <div key={a} className="list-gallery">
-                <img src={a} />
+                <img src={`${Server}/public/gallery/${id}/${a}`} />
               </div>
             ))}
           {media == "video" &&
-            vidlist.map((a) => (
+            data &&
+            data.videos.length >= 1 &&
+            data.videos.map((a) => (
               <div key={a} className="list-gallery">
-                <img src={a} />
+                <img src={`${Server}/public/gallery/${id}/${a}`} />
               </div>
             ))}
         </div>
@@ -54,3 +59,12 @@ const imglist = [
 ];
 
 const vidlist = ["/provide/edu.png", "/provide/i2.png"];
+export async function getServerSideProps(context) {
+  const cookie = context.req.cookies.token;
+  const responce = await axios.get(
+    `${Server + API.eventid(context.query.id)}?uid=${cookie}`
+  );
+  return {
+    props: { id: context.query.id, data: responce.data },
+  };
+}

@@ -4,17 +4,28 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import axios from "axios";
 
-export default function AdminEvents() {
+export default function AdminEvents({ id, data }) {
   const router = useRouter();
-  const [form, setForm] = useState({
-    title: "",
-    event: "",
-    description: "",
-    amount_expected: 0,
-    amount_collected: 0,
-  });
+  const [form, setForm] = useState(data);
+  const [local, setLocal] = useState(false);
   const [error, setError] = useState({ message: "", status: false });
- 
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+
+    if (file && file.type.startsWith("image/")) {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        const imageUrl = e.target.result;
+        console.log(imageUrl);
+        setForm((a) => ({ ...a, tumbnail: imageUrl }));
+        setLocal(() => true);
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
 
   const changeMenu = (n) => {
     router.push(n);
@@ -26,7 +37,7 @@ export default function AdminEvents() {
 
     try {
       const responce = await axios.post(
-        `${Server + API.events}?uid=${GetCookieToken()}`,
+        `${Server + API.events + "/" + form._id}?uid=${GetCookieToken()}`,
         formData,
         {
           headers: {
@@ -43,7 +54,7 @@ export default function AdminEvents() {
       ) {
         setError((a) => ({ ...a, message: data.message, status: true }));
       } else {
-        router.push("/admin/events");
+        router.reload()
       }
     } catch (error) {
       console.log(error);
@@ -95,13 +106,13 @@ export default function AdminEvents() {
                 aria-current="page"
                 style={{ color: "#a5adc6" }}
               >
-                New
+                {id}
               </li>
             </ol>
           </nav>
-          {/* <!-- add Events --> */}
+          {/* <!-- edit Events --> */}
           <div className="new-event">
-            <h1>new event</h1>
+            <h1>edit event</h1>
             <form
               method="post"
               id="eventform"
@@ -138,7 +149,6 @@ export default function AdminEvents() {
                   id="event_for"
                   name="event"
                   placeholder="Event for"
-                  maxLength={22}
                   value={form.event}
                   onChange={(e) =>
                     setForm((a) => ({
@@ -177,8 +187,18 @@ export default function AdminEvents() {
                   id="tumbnail"
                   name="file"
                   accept="image/*"
+                  onChange={handleFileChange}
                 />
-                <div id="previewthumnail"></div>
+                <div id="previewthumnail">
+                  <div className="selected-img">
+                    {/* <span>&times;</span> */}
+                    {local ? (
+                      <img src={`${form.tumbnail}`} />
+                    ) : (
+                      <img src={`${Server}/public${form.tumbnail}`} />
+                    )}
+                  </div>
+                </div>
               </div>
 
               <div className="mb-3">
@@ -221,7 +241,7 @@ export default function AdminEvents() {
                 />
               </div>
 
-              <input type="submit" value="Create Event" className="btn" />
+              <input type="submit" value="update Event" className="btn" />
             </form>
           </div>
         </div>
@@ -295,6 +315,7 @@ const Events = (props) => {
                 id="event_for"
                 name="event"
                 placeholder="Event for"
+                maxLength={22}
                 value={props.form.event}
                 onChange={(e) =>
                   props.setForm((a) => ({
@@ -402,3 +423,12 @@ const Events = (props) => {
     </>
   );
 };
+export async function getServerSideProps(context) {
+  const cookie = context.req.cookies.token;
+  const responce = await axios.get(
+    `${Server + API.eventid(context.query.edit)}?uid=${cookie}`
+  );
+  return {
+    props: { id: context.query.edit, data: responce.data },
+  };
+}

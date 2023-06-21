@@ -1,15 +1,16 @@
+import { API, Server } from "@/api/apiCalls";
 import Admin from "@/components/adminBase";
+import axios from "axios";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <Admin>
-      <Dashboard />
+      <Dashboard data={props} />
     </Admin>
   );
 }
 
-
-const Dashboard = () => {
+const Dashboard = ({ data }) => {
   return (
     <div className="con-home">
       {/* <!-- breadcrumb for the current page location  --> */}
@@ -37,7 +38,7 @@ const Dashboard = () => {
           </div>
           <div className="dash-detail">
             <span>No of Events</span>
-            <b>20</b>
+            <b>{data.event < 10 ? `0${data.event}` : data.event}</b>
           </div>
         </div>
 
@@ -57,10 +58,25 @@ const Dashboard = () => {
           </div>
           <div className="dash-detail">
             <span>gallery total</span>
-            <b>1020</b>
+            <b>{data.gallery < 10 ? `0${data.gallery}` : data.gallery}</b>
           </div>
         </div>
       </div>
     </div>
   );
 };
+
+export async function getServerSideProps(context) {
+  const cookie = context.req.cookies.token;
+  let event = await axios.get(`${Server + API.events}?uid=${cookie}&count=1`);
+  event = event.data.message;
+  const events = await axios.get(`${Server + API.events}?uid=${cookie}`);
+  let gallery = 0;
+  events.data.map((a) => {
+    gallery += a.images.length;
+    gallery += a.videos.length;
+  });
+  return {
+    props: { event, gallery },
+  };
+}

@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
-export default function Home() {
+import { API, Server } from "@/api/apiCalls";
+import axios from "axios";
+export default function Home({ data }) {
   const router = useRouter();
   return (
     <>
@@ -10,26 +12,42 @@ export default function Home() {
       <div className="event-home-tab">
         <h1>List of Events</h1>
         <div className="list-of-events">
-          {[1, 2, 3, 4, 5].map((a) => (
-            <div className="event-card" key={a}>
-              <img src="/banner/banner4.jpg" />
-              <div className="content">
-                <span className="title">EDUCATION</span>
-                <span className="dist">Education for all</span>
-                <p>₹86,800 Donated of ₹310,000</p>
-                <div className="progres">
-                  <span></span>
-                  <span></span>
+          {data.map((a) => {
+            let percentage =
+              (parseInt(a.amount_collected) / parseInt(a.amount_expected)) *
+              100;
+            percentage = percentage > 100 ? 100 : percentage;
+            return (
+              <div className="event-card" key={a._id}>
+                <img src={Server + "/public" + a.tumbnail} />
+                <div className="content">
+                  <span className="title">{a.title}</span>
+                  <span className="dist">{a.event}</span>
+                  <p>
+                    ₹{a.amount_collected} Donated of ₹{a.amount_expected}
+                  </p>
+                  <div className="progres">
+                    <span
+                      style={{
+                        width: `${percentage}%`,
+                      }}
+                    ></span>
+                    <span
+                      style={{
+                        left: `${percentage - 1}%`,
+                      }}
+                    ></span>
+                  </div>
+                  <button
+                    className="btn"
+                    onClick={() => router.push(`/events/${a._id}`)}
+                  >
+                    View Gallery
+                  </button>
                 </div>
-                <button
-                  className="btn"
-                  onClick={() => router.push(`/events/${a}`)}
-                >
-                  View Gallery
-                </button>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
         <div className="help-events">
           <h1>How you can Help</h1>
@@ -63,4 +81,12 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const cookie = context.req.cookies.token;
+  const responce = await axios.get(`${Server + API.events}?uid=${cookie}`);
+  return {
+    props: { data: responce.data },
+  };
 }

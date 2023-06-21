@@ -1,7 +1,9 @@
+import { API, Server } from "@/api/apiCalls";
 import Admin from "@/components/adminBase";
+import axios from "axios";
 import { useRouter } from "next/router";
 
-export default function AdminEvents() {
+export default function AdminEvents({ data }) {
   const router = useRouter();
   const changeMenu = (n) => {
     router.push(n);
@@ -9,7 +11,7 @@ export default function AdminEvents() {
   return (
     <>
       <Admin>
-        <Gallery changeMenu={changeMenu} />
+        <Gallery changeMenu={changeMenu} data={data} />
       </Admin>
     </>
   );
@@ -42,23 +44,23 @@ const Gallery = (props) => {
         <div className="gallery-list-event">
           <h1>Events Gallery</h1>
           <div className="gallery-list-box">
-            {[1, 2, 3, 4, 5].map((a) => (
-              <div className="gallery-card">
+            {props.data.map((a) => (
+              <div className="gallery-card" key={a.title}>
                 <div className="gallery-details">
-                  <img src="/banner/banner4.jpg" />
+                  <img src={`${Server}/public${a.tumbnail}`} />
                   <div className="content">
-                    <span className="title">EDUCATION</span>
+                    <span className="title">{a.title}</span>
                     <span className="images">
-                      images<b>20</b>
+                      images<b>{a.images.length}</b>
                     </span>
                     <span className="videos">
-                      videos<b>10</b>
+                      videos<b>{a.videos.length}</b>
                     </span>
                   </div>
                 </div>
                 <button
                   className="btn"
-                  onClick={() => props.changeMenu(`/admin/gallery/${a}`)}
+                  onClick={() => props.changeMenu(`/admin/gallery/${a._id}`)}
                 >
                   view
                 </button>
@@ -70,3 +72,11 @@ const Gallery = (props) => {
     </>
   );
 };
+
+export async function getServerSideProps(context) {
+  const cookie = context.req.cookies.token;
+  const responce = await axios.get(`${Server + API.events}?uid=${cookie}`);
+  return {
+    props: { data: responce.data },
+  };
+}
